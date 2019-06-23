@@ -27,7 +27,7 @@ public class DataUtilTest {
 	 */
 	@Test
 	public final void stringParaDate1() {
-		LOGGER.log(Level.FINE, "Testando stringParaDate1().");
+		LOGGER.log(Level.FINEST, "Testando stringParaDate1().");
 		// TODO: Testar {@link DataUtil#stringParaDate(String)}
 
 	}
@@ -37,7 +37,7 @@ public class DataUtilTest {
 	 */
 	@Test
 	public final void stringParaDate2() {
-		LOGGER.log(Level.FINE, "Testando stringParaDate2().");
+		LOGGER.log(Level.FINEST, "Testando stringParaDate2().");
 		// TODO: Testar {@link DataUtil#stringParaDate(String, String)}
 
 	}

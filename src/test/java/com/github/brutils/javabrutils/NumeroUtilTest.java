@@ -303,4 +303,190 @@ public class NumeroUtilTest {
 		Assert.assertFalse(NumeroUtil.isVazio(BigDecimal.valueOf(1)));
 	}
 
+	/**
+	 * Testa o método {@link NumeroUtil#nuloParaZero(Integer)}.
+	 */
+	@Test
+	public final void nuloParaZeroInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#nuloParaZero(Integer).");
+
+		// TODO: Testar NumeroUtil#nuloParaZero(Integer)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#nuloParaZero(Long)}.
+	 */
+	@Test
+	public final void nuloParaZeroLong() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#nuloParaZero(Long).");
+
+		// TODO: Testar NumeroUtil#nuloParaZero(Long)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#nuloParaZero(Float)}.
+	 */
+	@Test
+	public final void nuloParaZeroFloat() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#nuloParaZero(Float).");
+
+		// TODO: Testar NumeroUtil#nuloParaZero(Float)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#nuloParaZero(Double)}.
+	 */
+	@Test
+	public final void nuloParaZeroDouble() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#nuloParaZero(Double).");
+
+		// TODO: Testar NumeroUtil#nuloParaZero(Double)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#nuloParaZero(BigDecimal)}.
+	 */
+	@Test
+	public final void nuloParaZeroBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#nuloParaZero(BigDecimal).");
+
+		// TODO: Testar NumeroUtil#nuloParaZero(BigDecimal)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoPositivoParaNulo(Integer)}.
+	 */
+	@Test
+	public final void naoPositivoParaNuloInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoPositivoParaNulo(Integer).");
+
+		// TODO: Testar NumeroUtil#naoPositivoParaNulo(Integer)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoPositivoParaNulo(Long)}.
+	 */
+	@Test
+	public final void naoPositivoParaNuloLong() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoPositivoParaNulo(Long).");
+
+		// TODO: Testar NumeroUtil#naoPositivoParaNulo(Long)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoPositivoParaNulo(Float)}.
+	 */
+	@Test
+	public final void naoPositivoParaNuloFloat() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoPositivoParaNulo(Float).");
+
+		// TODO: Testar NumeroUtil#naoPositivoParaNulo(Float)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoPositivoParaNulo(Double)}.
+	 */
+	@Test
+	public final void naoPositivoParaNuloDouble() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoPositivoParaNulo(Double).");
+
+		// TODO: Testar NumeroUtil#naoPositivoParaNulo(Double)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoPositivoParaNulo(BigDecimal)}.
+	 */
+	@Test
+	public final void naoPositivoParaNuloBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoPositivoParaNulo(BigDecimal).");
+
+		// TODO: Testar NumeroUtil#naoPositivoParaNulo(BigDecimal)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoNegativoParaNulo(Integer)}.
+	 */
+	@Test
+	public final void naoNegativoParaNuloInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoNegativoParaNulo(Integer).");
+
+		// TODO: Testar NumeroUtil#naoNegativoParaNulo(Integer)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoNegativoParaNulo(Long)}.
+	 */
+	@Test
+	public final void naoNegativoParaNuloLong() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoNegativoParaNulo(Long).");
+
+		// TODO: Testar NumeroUtil#naoNegativoParaNulo(Long)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoNegativoParaNulo(Float)}.
+	 */
+	@Test
+	public final void naoNegativoParaNuloFloat() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoNegativoParaNulo(Float).");
+
+		// TODO: Testar NumeroUtil#naoNegativoParaNulo(Float)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoNegativoParaNulo(Double)}.
+	 */
+	@Test
+	public final void naoNegativoParaNuloDouble() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoNegativoParaNulo(Double).");
+
+		// TODO: Testar NumeroUtil#naoNegativoParaNulo(Double)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#naoNegativoParaNulo(BigDecimal)}.
+	 */
+	@Test
+	public final void naoNegativoParaNuloBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#naoNegativoParaNulo(BigDecimal).");
+
+		// TODO: Testar NumeroUtil#naoNegativoParaNulo(BigDecimal)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#converterParaBigDecimal(String)}.
+	 */
+	@Test
+	public final void converterParaBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#converterParaBigDecimal(String).");
+
+		// TODO: Testar NumeroUtil#converterParaBigDecimal(String)
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#converterParaInteger(String)}.
+	 */
+	@Test
+	public final void converterParaInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#converterParaInteger(String).");
+
+		// TODO: Testar NumeroUtil#converterParaInteger(String)
+	}
 }

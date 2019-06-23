@@ -31,8 +31,9 @@ public class DataUtil {
 	/**
 	 * Método Converte uma {@link String} no formato dd/mm/yyyy em uma data válida. <br>
 	 * Retorna <code>null</code> se a data passada como parâmetro for "" ou null.
-	 * @param data - Uma data do tipo {@link String} no formato dd/mm/yyyy.
-	 * @return data - A data convertida no tipo {@link Date}
+	 * 
+	 * @param  data - Uma data do tipo {@link String} no formato dd/mm/yyyy.
+	 * @return      - A data convertida no tipo {@link Date}
 	 */
 	public static Date stringParaDate(final String data) throws ParseException {
 
@@ -46,9 +47,34 @@ public class DataUtil {
 
 		try {
 			resultado = dataEntrada.parse(data);
-		} catch (ParseException e) {
+		} catch (ParseException parseException) {
 			LOGGER.log(Level.SEVERE, "Erro ao converter a data. Informe uma data válida no formato dd/mm/yyyy. Data enviada " + data);
-			throw e;
+			throw parseException;
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Método Converte uma {@link String} no formato passado como parâmetro (formatoDeEntrada) em uma data válida. <br>
+	 * A data passada como parâmetro será convertida para o formato dd/mm/yyyy.
+	 * 
+	 * @param  data             - Uma data do tipo {@link String} no formato passado como parâmetro.
+	 * @param  formatoDeEntrada - Formato de entrada
+	 * @return                  - A data convertida no tipo {@link Date}
+	 */
+	public static Date stringParaDate(final String data, final String formatoDeEntrada) throws ParseException {
+
+		Date resultado = null;
+
+		DateFormat dataEntrada = new SimpleDateFormat(formatoDeEntrada);
+		DateFormat dataSaida = new SimpleDateFormat(FORMATO_DATA_BR);
+
+		try {
+			resultado = dataSaida.parse(dataSaida.format(dataEntrada.parse(data)));
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao converter a data. Informe uma data e formato válidos. Data enviada " + data + " , formato enviado " + formatoDeEntrada);
+			throw parseException;
 		}
 
 		return resultado;

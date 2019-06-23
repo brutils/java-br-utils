@@ -32,7 +32,7 @@
 				</executions>
 				<configuration>
 					<source>1.8</source>
-					<outputDirectory>${project.build.directory}/../javadoc</outputDirectory>
+					<outputDirectory>${project.build.directory}/../docs/javadoc</outputDirectory>
 					<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
 				</configuration>
 			</plugin>

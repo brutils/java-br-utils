@@ -27,6 +27,31 @@ public class StringUtilTest {
 	private static final Character CHARACTER_NULO = null;
 
 	/**
+	 * 123.
+	 */
+	private static final String STRING_123 = "123";
+
+	/**
+	 * String com três espaços.
+	 */
+	private static final String STRING_3_ESPACOS = "   ";
+
+	/**
+	 * String com espaços na esquerda e na direita.
+	 */
+	private static final String STRING_ESPACOS_ESQUERDA_DIREITA = "    123    ";
+
+	/**
+	 * Número 6.
+	 */
+	private static final int NUMERO_6 = 6;
+
+	/**
+	 * Número 3.
+	 */
+	private static final int NUMERO_3 = 3;
+
+	/**
 	 * Construtor padrão.
 	 */
 	public StringUtilTest() {
@@ -86,7 +111,17 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarZeroEsquerda(String, int).");
 
-		// TODO: Testar StringUtil#adicionarZeroEsquerda(String, int)
+		Assert.assertEquals("000123", StringUtil.adicionarZeroEsquerda(STRING_123, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroEsquerda(STRING_123, NUMERO_3));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroEsquerda(STRING_123, 0));
+
+		Assert.assertEquals("000", StringUtil.adicionarZeroEsquerda("", NUMERO_3));
+
+		Assert.assertEquals(null, StringUtil.adicionarZeroEsquerda(null, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroEsquerda(STRING_123, -1));
 	}
 
 	/**
@@ -97,7 +132,17 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarZeroDireita(String, int).");
 
-		// TODO: Testar StringUtil#adicionarZeroDireita(String, int)
+		Assert.assertEquals("123000", StringUtil.adicionarZeroDireita(STRING_123, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroDireita(STRING_123, NUMERO_3));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroDireita(STRING_123, 0));
+
+		Assert.assertEquals("000", StringUtil.adicionarZeroDireita("", NUMERO_3));
+
+		Assert.assertEquals(null, StringUtil.adicionarZeroDireita(null, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarZeroDireita(STRING_123, -1));
 	}
 
 	/**
@@ -108,7 +153,17 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarEspacoEsquerda(String, int).");
 
-		// TODO: Testar StringUtil#adicionarEspacoEsquerda(String, int)
+		Assert.assertEquals("   123", StringUtil.adicionarEspacoEsquerda(STRING_123, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoEsquerda(STRING_123, NUMERO_3));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoEsquerda(STRING_123, 0));
+
+		Assert.assertEquals(STRING_3_ESPACOS, StringUtil.adicionarEspacoEsquerda("", NUMERO_3));
+
+		Assert.assertEquals(null, StringUtil.adicionarEspacoEsquerda(null, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoEsquerda(STRING_123, -1));
 	}
 
 	/**
@@ -119,7 +174,17 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarEspacoDireita(String, int).");
 
-		// TODO: Testar StringUtil#adicionarEspacoDireita(String, int)
+		Assert.assertEquals("123   ", StringUtil.adicionarEspacoDireita(STRING_123, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoDireita(STRING_123, NUMERO_3));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoDireita(STRING_123, 0));
+
+		Assert.assertEquals(STRING_3_ESPACOS, StringUtil.adicionarEspacoDireita("", NUMERO_3));
+
+		Assert.assertEquals(null, StringUtil.adicionarEspacoDireita(null, NUMERO_6));
+
+		Assert.assertEquals(STRING_123, StringUtil.adicionarEspacoDireita(STRING_123, -1));
 	}
 
 	/**
@@ -130,7 +195,11 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#removerEspacoDireita(String).");
 
-		// TODO: Testar StringUtil#removerEspacoDireita(String)
+		Assert.assertEquals("    123", StringUtil.removerEspacoDireita(STRING_ESPACOS_ESQUERDA_DIREITA));
+
+		Assert.assertEquals("", StringUtil.removerEspacoDireita("   "));
+
+		Assert.assertEquals(null, StringUtil.removerEspacoDireita(null));
 	}
 
 	/**
@@ -141,7 +210,11 @@ public class StringUtilTest {
 
 		LOGGER.log(Level.FINEST, "Testando StringUtil#removerEspacoEsquerda(String).");
 
-		// TODO: Testar StringUtil#removerEspacoEsquerda(String)
+		Assert.assertEquals("123    ", StringUtil.removerEspacoEsquerda(STRING_ESPACOS_ESQUERDA_DIREITA));
+
+		Assert.assertEquals("", StringUtil.removerEspacoEsquerda(STRING_3_ESPACOS));
+
+		Assert.assertEquals(null, StringUtil.removerEspacoEsquerda(null));
 	}
 
 	/**

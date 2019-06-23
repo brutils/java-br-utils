@@ -31,7 +31,6 @@ public class DataUtil {
 	/**
 	 * Método Converte uma {@link String} no formato dd/mm/yyyy em uma data válida. <br>
 	 * Retorna <code>null</code> se a data passada como parâmetro for "" ou null.
-	 * 
 	 * @param data - Uma data do tipo {@link String} no formato dd/mm/yyyy.
 	 * @return data - A data convertida no tipo {@link Date}
 	 */

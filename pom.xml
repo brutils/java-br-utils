@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.brutils</groupId>
 	<artifactId>java-br-utils</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Java BR Utils</name>
 	<description>
@@ -23,7 +23,7 @@
 		<url>git@github.com:brutils/java-br-utils.git</url>
 		<connection>scm:git:git@github.com:brutils/java-br-utils.git</connection>
 		<developerConnection>scm:git:git@github.com:brutils/java-br-utils.git</developerConnection>
-		<tag>java-br-utils-0.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<licenses>

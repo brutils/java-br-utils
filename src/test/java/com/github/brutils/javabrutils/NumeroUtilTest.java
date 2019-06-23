@@ -135,6 +135,91 @@ public class NumeroUtilTest {
 	}
 
 	/**
+	 * Testa o método {@link NumeroUtil#isNegativo(Integer)}.
+	 */
+	@Test
+	public final void isNegativoInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isNegativo(Integer).");
+
+		Assert.assertFalse(NumeroUtil.isNegativo(INTEGER_NULO));
+
+		Assert.assertTrue(NumeroUtil.isNegativo(-1));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(0));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(1));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isNegativo(Long)}.
+	 */
+	@Test
+	public final void isNegativoLong() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isNegativo(Long).");
+
+		Assert.assertFalse(NumeroUtil.isNegativo(LONG_NULO));
+
+		Assert.assertTrue(NumeroUtil.isNegativo(-1L));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(0L));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(1L));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isNegativo(Float)}.
+	 */
+	@Test
+	public final void isNegativoFloat() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isNegativo(Float).");
+
+		Assert.assertFalse(NumeroUtil.isNegativo(FLOAT_NULO));
+
+		Assert.assertTrue(NumeroUtil.isNegativo(-1F));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(0F));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(1F));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isNegativo(Double)}.
+	 */
+	@Test
+	public final void isNegativoDouble() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isNegativo(Double).");
+
+		Assert.assertFalse(NumeroUtil.isNegativo(DOUBLE_NULO));
+
+		Assert.assertTrue(NumeroUtil.isNegativo(-1D));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(0D));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(1D));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isNegativo(BigDecimal)}.
+	 */
+	@Test
+	public final void isNegativoBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isNegativo(BigDecimal).");
+
+		Assert.assertFalse(NumeroUtil.isNegativo(BIGDECIMAL_NULO));
+
+		Assert.assertTrue(NumeroUtil.isNegativo(BigDecimal.valueOf(-1D)));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(BigDecimal.ZERO));
+
+		Assert.assertFalse(NumeroUtil.isNegativo(BigDecimal.ONE));
+	}
+
+	/**
 	 * Testa o método {@link NumeroUtil#isVazio(Integer)}.
 	 */
 	@Test

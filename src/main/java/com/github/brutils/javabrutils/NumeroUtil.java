@@ -86,6 +86,71 @@ public class NumeroUtil {
 	}
 
 	/**
+	 * Verifica se o número é negativo. <br>
+	 * Retorna true se for negativo. <br>
+	 * Se for nulo, retorna false.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isNegativo(final Integer numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é negativo.");
+		return numero != null && numero < 0;
+	}
+
+	/**
+	 * Verifica se o número é negativo. <br>
+	 * Retorna true se for negativo. <br>
+	 * Se for nulo, retorna false.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isNegativo(final Long numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é negativo.");
+		return numero != null && numero < 0L;
+	}
+
+	/**
+	 * Verifica se o número é negativo. <br>
+	 * Retorna true se for negativo. <br>
+	 * Se for nulo, retorna false.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isNegativo(final Float numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é negativo.");
+		return numero != null && numero < 0.0F;
+	}
+
+	/**
+	 * Verifica se o número é negativo. <br>
+	 * Retorna true se for negativo. <br>
+	 * Se for nulo, retorna false.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isNegativo(final Double numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é negativo.");
+		return numero != null && numero < 0.0;
+	}
+
+	/**
+	 * Verifica se o número é negativo. <br>
+	 * Retorna true se for negativo. <br>
+	 * Se for nulo, retorna false.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isNegativo(final BigDecimal numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é negativo.");
+		return numero != null && numero.compareTo(BigDecimal.ZERO) < 0;
+	}
+
+	/**
 	 * Verifica se é um número nulo ou com valor zero. <br/>
 	 * Retorna true se for nulo ou zero.
 	 * 

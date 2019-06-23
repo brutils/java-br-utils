@@ -67,4 +67,125 @@ public class StringUtilTest {
 		Assert.assertFalse(StringUtil.isVazio('N'));
 	}
 
+	/**
+	 * Testa o método {@link StringUtil#substituir(String, String, String)}.
+	 */
+	@Test
+	public final void substituir() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#substituir(String, String, String).");
+
+		// TODO: Testar StringUtil#substituir(String, String, String)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#adicionarZeroEsquerda(String, int)}.
+	 */
+	@Test
+	public final void adicionarZeroEsquerda() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarZeroEsquerda(String, int).");
+
+		// TODO: Testar StringUtil#adicionarZeroEsquerda(String, int)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#adicionarZeroDireita(String, int)}.
+	 */
+	@Test
+	public final void adicionarZeroDireita() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarZeroDireita(String, int).");
+
+		// TODO: Testar StringUtil#adicionarZeroDireita(String, int)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#adicionarEspacoEsquerda(String, int)}.
+	 */
+	@Test
+	public final void adicionarEspacoEsquerda() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarEspacoEsquerda(String, int).");
+
+		// TODO: Testar StringUtil#adicionarEspacoEsquerda(String, int)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#adicionarEspacoDireita(String, int)}.
+	 */
+	@Test
+	public final void adicionarEspacoDireita() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarEspacoDireita(String, int).");
+
+		// TODO: Testar StringUtil#adicionarEspacoDireita(String, int)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#removerEspacoDireita(String)}.
+	 */
+	@Test
+	public final void removerEspacoDireita() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#removerEspacoDireita(String).");
+
+		// TODO: Testar StringUtil#removerEspacoDireita(String)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#removerEspacoEsquerda(String)}.
+	 */
+	@Test
+	public final void removerEspacoEsquerda() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#removerEspacoEsquerda(String).");
+
+		// TODO: Testar StringUtil#removerEspacoEsquerda(String)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#adicionarChar(char, int, String, boolean)}.
+	 */
+	@Test
+	public final void adicionarChar() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#adicionarChar(char, int, String, boolean).");
+
+		// TODO: Testar StringUtil#adicionarChar(char, int, String, boolean)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#removerCharEsquerda(String, char)}.
+	 */
+	@Test
+	public final void removerCharEsquerda() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#removerCharEsquerda(String, char).");
+
+		// TODO: Testar StringUtil#removerCharEsquerda(String, char)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#removerCharDireita(String, char)}.
+	 */
+	@Test
+	public final void removerCharDireita() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#removerCharDireita(String, char).");
+
+		// TODO: Testar StringUtil#removerCharDireita(String, char)
+	}
+
+	/**
+	 * Testa o método {@link StringUtil#removerQuebraDeLinha(String)}.
+	 */
+	@Test
+	public final void removerQuebraDeLinha() {
+
+		LOGGER.log(Level.FINEST, "Testando StringUtil#removerQuebraDeLinha(String).");
+
+		// TODO: Testar StringUtil#removerQuebraDeLinha(String)
+	}
+
 }

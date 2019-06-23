@@ -133,4 +133,283 @@ public class StringUtil {
 		return conteudo.toString();
 	}
 
+	/**
+	 * Método para preencher uma string com Zeros à esquerda até o tamanho passado como parâmetro. <br>
+	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string  - String
+	 * @param  tamanho - Tamanho
+	 * @return         string
+	 * @see            java.lang.StringBuilder
+	 */
+	public static String adicionarZeroEsquerda(final String string, final int tamanho) {
+
+		LOGGER.log(Level.FINEST, "Adicionando Zeros à esquerda da String " + string + " até que atinja o tamanho máximo de " + tamanho);
+
+		if (string == null) {
+			return null;
+		}
+
+		if (tamanho <= string.length()) {
+			return string;
+		}
+
+		StringBuilder resultado = new StringBuilder(string);
+
+		for (int i = string.length(); i <= (tamanho - 1); i++) {
+			resultado.insert(0, "0");
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método para preencher uma string com Zeros à direita até o tamanho passado como parâmetro. <br>
+	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string  - String
+	 * @param  tamanho - Tamanho
+	 * @return         string
+	 * @see            java.lang.StringBuilder
+	 */
+	public static String adicionarZeroDireita(final String string, final int tamanho) {
+
+		LOGGER.log(Level.FINEST, "Adicionando Zeros à direita da String " + string + " até que atinja o tamanho máximo de " + tamanho);
+
+		if (string == null) {
+			return null;
+		}
+
+		if (tamanho <= string.length()) {
+			return string;
+		}
+
+		StringBuilder resultado = new StringBuilder(string);
+
+		for (int i = string.length(); i <= (tamanho - 1); i++) {
+			resultado.append('0');
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método para preencher uma string com Espaços à esquerda até o tamanho passado como parâmetro. <br>
+	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string  - String
+	 * @param  tamanho - Tamanho
+	 * @return         string
+	 * @see            java.lang.StringBuilder
+	 */
+	public static String adicionarEspacoEsquerda(final String string, final int tamanho) {
+
+		LOGGER.log(Level.FINEST, "Adicionando Espaços à esquerda da String " + string + " até que atinja o tamanho máximo de " + tamanho);
+
+		if (string == null) {
+			return null;
+		}
+
+		if (tamanho <= string.length()) {
+			return string;
+		}
+
+		StringBuilder resultado = new StringBuilder(string);
+
+		for (int i = string.length(); i <= (tamanho - 1); i++) {
+			resultado.insert(0, " ");
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método para preencher uma string com Espaços à direita até o tamanho passado como parâmetro. <br>
+	 * Se o tamanho da string for maior do que o tamanho passado como parâmetro, retorna a string original. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string  - String
+	 * @param  tamanho - Tamanho
+	 * @return         string
+	 * @see            java.lang.StringBuilder
+	 */
+	public static String adicionarEspacoDireita(final String string, final int tamanho) {
+
+		LOGGER.log(Level.FINEST, "Adicionando Espaços à direita da String " + string + " até que atinja o tamanho máximo de " + tamanho);
+
+		if (string == null) {
+			return null;
+		}
+
+		if (tamanho <= string.length()) {
+			return string;
+		}
+
+		StringBuilder resultado = new StringBuilder(string);
+
+		for (int i = string.length(); i <= (tamanho - 1); i++) {
+			resultado.append(' ');
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método remover todos os espaços à direita da string passada como parâmetro. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string - String
+	 * @return        String
+	 */
+	public static String removerEspacoDireita(final String string) {
+
+		LOGGER.log(Level.FINEST, "Remove todos os espaços à direita da String " + string);
+
+		if (string == null) {
+			return null;
+		}
+
+		String resultado = "";
+
+		for (int indice = string.length() - 1; indice >= 0; --indice) {
+
+			if (string.charAt(indice) != ' ') {
+
+				resultado = string.substring(0, indice + 1);
+				break;
+			}
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Método remover todos os espaços à esquerda da string passada como parâmetro. <br>
+	 * Se a string for nula, retorna null.
+	 * 
+	 * @param  string - String
+	 * @return        String
+	 */
+	public static String removerEspacoEsquerda(final String string) {
+
+		LOGGER.log(Level.FINEST, "Remove todos os espaços à esquerda da String " + string);
+
+		if (string == null) {
+			return null;
+		}
+
+		String resultado = "";
+
+		for (int indice = 0; indice < string.length(); indice++) {
+
+			if (string.charAt(indice) != ' ') {
+
+				resultado = string.substring(indice, string.length());
+				break;
+			}
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Adiciona um caracter (String) em um texto (String).
+	 * 
+	 * @param  caracter      - Caractere
+	 * @param  tamanhoMaximo - Tamanho máximo
+	 * @param  texto         - Texto
+	 * @param  noInicio      - No início
+	 * @return               texto
+	 */
+	public static String adicionarChar(final char caracter, final int tamanhoMaximo, final String texto, final boolean noInicio) {
+
+		LOGGER.log(Level.FINEST, "Adicionando o Character " + caracter + " no texto " + texto + ", até que atinja o tamanho máximo " + tamanhoMaximo);
+
+		StringBuilder resultado = new StringBuilder();
+		StringBuilder caracterAdd = new StringBuilder();
+
+		if (texto != null && !("".equals(texto))) {
+			resultado.append(texto.trim());
+		}
+
+		if (resultado.length() <= tamanhoMaximo) {
+			for (int i = 0; i < (tamanhoMaximo - resultado.length()); i++) {
+				caracterAdd.append(caracter);
+			}
+		} else {
+			return StringUtil.nuloParaVazio(texto).substring(0, tamanhoMaximo);
+		}
+
+		if (noInicio) {
+			resultado = new StringBuilder(caracterAdd + resultado.toString());
+		} else {
+			resultado.append(caracterAdd);
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método para remover o char passado como parâmetro da string.
+	 * 
+	 * @param  string    - String
+	 * @param  character - Caractere
+	 * @return           string
+	 */
+	public static String removerCharEsquerda(final String string, final char character) {
+
+		LOGGER.log(Level.FINEST, "Removendo o Character " + character + " que estão à esquerda da String " + string);
+
+		String resultado = "";
+
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i) != character) {
+				resultado += string.substring(i);
+				return resultado;
+			}
+		}
+
+		return resultado;
+	}
+	
+	/**
+	 * Método para remover o char passado como parâmetro da string.
+	 * 
+	 * @param  string    - String
+	 * @param  character - Caractere
+	 * @return           string
+	 */
+	public static String removerCharDireita(final String string, final char character) {
+
+		LOGGER.log(Level.FINEST, "Removendo o Character " + character + " que estão à direita da String " + string);
+
+		String resultado = "";
+		String stringReversa = new StringBuilder(string).reverse().toString();
+
+		for (int i = 0; i < stringReversa.length(); i++) {
+			if (stringReversa.charAt(i) != character) {
+				resultado += stringReversa.substring(i);
+				return resultado;
+			}
+		}
+
+		return new StringBuilder(resultado).reverse().toString();
+	}
+
+	/**
+	 * Remove todas as quebras de linhas contidas em uma string.
+	 * 
+	 * @param  string - String
+	 * @return        String
+	 */
+	public static String removerQuebraDeLinha(final String string) {
+
+		LOGGER.log(Level.FINEST, "Removendo as quebras de linha da String " + string);
+
+		return string.replaceAll("(\n|\r)+", "");
+	}
+
 }

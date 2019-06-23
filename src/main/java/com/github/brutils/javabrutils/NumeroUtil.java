@@ -84,4 +84,54 @@ public class NumeroUtil {
 		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é positivo.");
 		return numero != null && numero.compareTo(BigDecimal.ZERO) > 0;
 	}
+
+	/**
+	 * Verifica se é um número nulo ou com valor zero. <br/>
+	 * Retorna true se for nulo ou zero.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isVazio(final Integer numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é vazio.");
+		return numero == null || numero == 0;
+	}
+
+	/**
+	 * Verifica se é um número nulo ou com valor zero. <br>
+	 * Retorna true se for nulo ou zero.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isVazio(final Long numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é vazio.");
+		return numero == null || numero == 0;
+	}
+
+	/**
+	 * Verifica se é um número nulo ou com valor zero. <br>
+	 * Retorna true se for nulo ou zero.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 */
+	public static boolean isVazio(final Double numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é vazio.");
+		return numero == null || Double.doubleToRawLongBits(numero) == 0L;
+	}
+
+	/**
+	 * Verifica se é um número nulo ou com valor zero. <br>
+	 * Retorna true se for nulo ou zero.
+	 * 
+	 * @param  numero - Número que será verificado
+	 * @return        boolean
+	 * @see           java.lang.Comparable#compareTo(Object)
+	 */
+	public static boolean isVazio(final BigDecimal numero) {
+		LOGGER.log(Level.FINEST, "Verificando se " + numero + " é vazio.");
+		return numero == null || numero.compareTo(BigDecimal.ZERO) == 0;
+	}
+
 }

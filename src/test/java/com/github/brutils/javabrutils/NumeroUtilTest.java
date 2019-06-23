@@ -134,4 +134,88 @@ public class NumeroUtilTest {
 		Assert.assertTrue(NumeroUtil.isPositivo(BigDecimal.ONE));
 	}
 
+	/**
+	 * Testa o método {@link NumeroUtil#isVazio(Integer)}.
+	 */
+	@Test
+	public final void isVazioInteger() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isVazio(Integer).");
+
+		Assert.assertTrue(NumeroUtil.isVazio(INTEGER_NULO));
+
+		Assert.assertTrue(NumeroUtil.isVazio(0));
+
+		Assert.assertTrue(NumeroUtil.isVazio(Integer.valueOf(0)));
+
+		Assert.assertFalse(NumeroUtil.isVazio(1));
+
+		Assert.assertFalse(NumeroUtil.isVazio(-1));
+
+		Assert.assertFalse(NumeroUtil.isVazio(Integer.valueOf(1)));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isVazio(Long)}.
+	 */
+	@Test
+	public final void isVazioLong() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isVazio(Long).");
+
+		Assert.assertTrue(NumeroUtil.isVazio(LONG_NULO));
+
+		Assert.assertTrue(NumeroUtil.isVazio(0L));
+
+		Assert.assertTrue(NumeroUtil.isVazio(Long.valueOf(0)));
+
+		Assert.assertFalse(NumeroUtil.isVazio(1L));
+
+		Assert.assertFalse(NumeroUtil.isVazio(-1L));
+
+		Assert.assertFalse(NumeroUtil.isVazio(Long.valueOf(1)));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isVazio(Double)}.
+	 */
+	@Test
+	public final void isVazioDouble() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isVazio(Double).");
+
+		Assert.assertTrue(NumeroUtil.isVazio(DOUBLE_NULO));
+
+		Assert.assertTrue(NumeroUtil.isVazio(0.0));
+
+		Assert.assertTrue(NumeroUtil.isVazio(Double.valueOf(0.0)));
+
+		Assert.assertFalse(NumeroUtil.isVazio(1.0));
+
+		Assert.assertFalse(NumeroUtil.isVazio(-1.0));
+
+		Assert.assertFalse(NumeroUtil.isVazio(Double.valueOf(1.0)));
+	}
+
+	/**
+	 * Testa o método {@link NumeroUtil#isVazio(BigDecimal)}.
+	 */
+	@Test
+	public final void isVazioBigDecimal() {
+
+		LOGGER.log(Level.FINEST, "Testando NumeroUtil#isVazio(BigDecimal).");
+
+		Assert.assertTrue(NumeroUtil.isVazio(BIGDECIMAL_NULO));
+
+		Assert.assertTrue(NumeroUtil.isVazio(BigDecimal.ZERO));
+
+		Assert.assertTrue(NumeroUtil.isVazio(BigDecimal.valueOf(0)));
+
+		Assert.assertFalse(NumeroUtil.isVazio(BigDecimal.ONE));
+
+		Assert.assertFalse(NumeroUtil.isVazio(BigDecimal.valueOf(-1)));
+
+		Assert.assertFalse(NumeroUtil.isVazio(BigDecimal.valueOf(1)));
+	}
+
 }

@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.github.brutils.javabrutils","l":"DataUtil"},{"p":"com.github.brutils.javabrutils","l":"NumeroUtil"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.github.brutils.javabrutils","l":"DataUtil"},{"p":"com.github.brutils.javabrutils","l":"NumeroUtil"},{"p":"com.github.brutils.javabrutils","l":"StringUtil"}]

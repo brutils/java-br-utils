@@ -93,4 +93,44 @@ public class StringUtil {
 		return ' ' == nuloParaVazio(character);
 	}
 
+	/**
+	 * Substitui todas as stringAhSerSubstituida por stringSubstituta que estão na stringCompleta.
+	 * 
+	 * @param  stringCompleta         - String completa
+	 * @param  stringAhSerSubstituida - String a ser substituida
+	 * @param  stringSubstituta       - String substituta
+	 * @return                        String
+	 */
+	public static String substituir(final String stringCompleta, final String stringAhSerSubstituida, final String stringSubstituta) {
+
+		LOGGER.log(Level.FINEST, "Substituindo " + stringAhSerSubstituida + " por " + stringSubstituta + " na string " + stringCompleta);
+
+		if (stringCompleta == null || stringAhSerSubstituida == null || stringSubstituta == null) {
+			return null;
+		}
+
+		StringBuilder conteudo = new StringBuilder(stringCompleta);
+		StringBuilder conteudoTemp = new StringBuilder();
+
+		boolean replace = true;
+
+		do {
+
+			int posicao = conteudo.indexOf(stringAhSerSubstituida);
+
+			if (posicao == -1) {
+				replace = false;
+			} else {
+				conteudoTemp = new StringBuilder(conteudo.subSequence(0, posicao));
+				conteudoTemp.append(stringSubstituta);
+				conteudoTemp.append(conteudo.subSequence(posicao + stringAhSerSubstituida.length(), conteudo.length()));
+
+				conteudo = conteudoTemp;
+			}
+
+		} while (replace);
+
+		return conteudo.toString();
+	}
+
 }

@@ -73,6 +73,166 @@ public class DataUtilTest {
 	}
 
 	/**
+	 * Testa o método {@link DataUtil#dataHoraParaString(java.util.Date)}.
+	 */
+	@Test
+	public final void dataHoraParaString() {
+		LOGGER.log(Level.FINEST, "Testando dataHoraParaString().");
+		// TODO: Testar {@link DataUtil#dataHoraParaString(java.util.Date)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#formatarData(String, String)}.
+	 */
+	@Test
+	public final void formatarData1() {
+		LOGGER.log(Level.FINEST, "Testando formatarData1().");
+		// TODO: Testar {@link DataUtil#formatarData(String, String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#formatarData(String)}.
+	 */
+	@Test
+	public final void formatarData2() {
+		LOGGER.log(Level.FINEST, "Testando formatarData2().");
+		// TODO: Testar {@link DataUtil#formatarData(String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#formatarData(String, String, String)}.
+	 */
+	@Test
+	public final void formatarData3() {
+		LOGGER.log(Level.FINEST, "Testando formatarData3().");
+		// TODO: Testar {@link DataUtil#formatarData(String, String, String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#dataAtualFormatada(String)}.
+	 */
+	@Test
+	public final void dataAtualFormatada() {
+		LOGGER.log(Level.FINEST, "Testando dataAtualFormatada().");
+		// TODO: Testar {@link DataUtil#dataAtualFormatada(String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#ultimoDiaDoMes(java.util.Date)}.
+	 */
+	@Test
+	public final void ultimoDiaDoMes1() {
+		LOGGER.log(Level.FINEST, "Testando ultimoDiaDoMes1().");
+		// TODO: Testar {@link DataUtil#ultimoDiaDoMes(java.util.Date)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#isDataValida(String)}.
+	 */
+	@Test
+	public final void isDataValida1() {
+		LOGGER.log(Level.FINEST, "Testando isDataValida1().");
+		// TODO: Testar {@link DataUtil#isDataValida(String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#isDataValida(java.util.Date)}.
+	 */
+	@Test
+	public final void isDataValida2() {
+		LOGGER.log(Level.FINEST, "Testando isDataValida2().");
+		// TODO: Testar {@link DataUtil#isDataValida(java.util.Date)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#isDataFormatoValido(String)}.
+	 */
+	@Test
+	public final void isDataFormatoValido() {
+		LOGGER.log(Level.FINEST, "Testando isDataFormatoValido().");
+		// TODO: Testar {@link DataUtil#isDataFormatoValido(String)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#adicionarDias(java.util.Date, int)}.
+	 */
+	@Test
+	public final void adicionarDias() {
+		LOGGER.log(Level.FINEST, "Testando adicionarDias().");
+		// TODO: Testar {@link DataUtil#adicionarDias(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#removerDias(java.util.Date, int)}.
+	 */
+	@Test
+	public final void removerDias() {
+		LOGGER.log(Level.FINEST, "Testando adicionarDias().");
+		// TODO: Testar {@link DataUtil#removerDias(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#adicionarMeses(java.util.Date, int)}.
+	 */
+	@Test
+	public final void adicionarMeses() {
+		LOGGER.log(Level.FINEST, "Testando adicionarMeses().");
+		// TODO: Testar {@link DataUtil#adicionarMeses(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#removerMeses(java.util.Date, int)}.
+	 */
+	@Test
+	public final void removerMeses() {
+		LOGGER.log(Level.FINEST, "Testando removerMeses().");
+		// TODO: Testar {@link DataUtil#removerMeses(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#adicionarAnos(java.util.Date, int)}.
+	 */
+	@Test
+	public final void adicionarAnos() {
+		LOGGER.log(Level.FINEST, "Testando adicionarAnos().");
+		// TODO: Testar {@link DataUtil#adicionarAnos(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#removerAnos(java.util.Date, int)}.
+	 */
+	@Test
+	public final void removerAnos() {
+		LOGGER.log(Level.FINEST, "Testando removerAnos().");
+		// TODO: Testar {@link DataUtil#removerAnos(java.util.Date, int)}
+
+	}
+
+	/**
+	 * Testa o método {@link DataUtil#ultimoDiaDoMes(Integer, Integer)}.
+	 */
+	@Test
+	public final void ultimoDiaDoMes2() {
+		LOGGER.log(Level.FINEST, "Testando ultimoDiaDoMes2().");
+		// TODO: Testar {@link DataUtil#ultimoDiaDoMes(Integer, Integer)}
+
+	}
+
+	/**
 	 * Testa o método {@link DataUtil#converterDataParaAnoMesDia(String)}.
 	 */
 	@Test

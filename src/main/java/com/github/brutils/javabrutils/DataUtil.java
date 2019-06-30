@@ -37,9 +37,29 @@ public class DataUtil {
 	private static final String FORMATO_DATA_YYYY_MM_DD = "yyyy/MM/dd";
 
 	/**
+	 * Constante que representa o formato de data yyyy-MM-dd.
+	 */
+	private static final String FORMATO_DATA_YYYY_MM_DD_TRACO = "yyyy-MM-dd";
+
+	/**
 	 * Constante que representa o formato de data yyyy.
 	 */
 	private static final String FORMATO_DATA_YYYY = "yyyy";
+
+	/**
+	 * Constante que representa o formato de data dd/MM/yyyy às HH:mm.
+	 */
+	private static final String FORMATO_DATA_DD_MM_YYYY_AS_HH_MM = "dd/MM/yyyy à's' HH:mm";
+
+	/**
+	 * Constante que representa a última data válida.
+	 */
+	private static final String DATA_VALIDA_FINAL = "31/12/9999";
+
+	/**
+	 * Constante que representa a primeira data válida.
+	 */
+	private static final String DATA_VALIDA_INICIAL = "01/01/1753";
 
 	/**
 	 * Construtor privado para que não sejam criadas instâncias desta classe.
@@ -180,6 +200,353 @@ public class DataUtil {
 		resultado = dataSaida.format(data);
 
 		return resultado;
+	}
+
+	/**
+	 * Método Converte uma Data válida numa String de data : dd/MM/yyyy às HH:mm.
+	 * 
+	 * @param  data - Data
+	 * @return      data - String
+	 */
+	public static String dataHoraParaString(final Date data) {
+
+		StringBuilder resultado = new StringBuilder("");
+
+		DateFormat formatoSaida = new SimpleDateFormat(FORMATO_DATA_DD_MM_YYYY_AS_HH_MM);
+
+		if (data != null) {
+			resultado.append(formatoSaida.format(data));
+		}
+
+		return resultado.toString();
+	}
+
+	/**
+	 * Método para formatar data.
+	 * 
+	 * @param  data             - Data
+	 * @param  formatoDeEntrada - Formato de entrada
+	 * @return                  data
+	 * @throws ParseException
+	 */
+	public static String formatarData(final String data, final String formatoDeEntrada) throws ParseException {
+
+		String resultado = "";
+
+		if (data == null) {
+			return "";
+		}
+
+		DateFormat dataEntrada = new SimpleDateFormat(formatoDeEntrada);
+		DateFormat dataSaida = new SimpleDateFormat(FORMATO_DATA_DD_MM_YYYY);
+
+		try {
+
+			Date dataValida = dataEntrada.parse(data);
+			resultado = dataSaida.format(dataValida);
+
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao formatar a data. Informe uma data e formato válidos. Data enviada " + data + " , formato de entrada enviado " + formatoDeEntrada);
+			throw parseException;
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Método para formatar data yyyy-MM-dd em dd/MM/yyyy.
+	 * 
+	 * @param  data           - Data
+	 * @return                data
+	 * @throws ParseException
+	 */
+	public static String formatarData(final String data) throws ParseException {
+
+		String resultado = new String();
+		DateFormat dataEntrada = new SimpleDateFormat(FORMATO_DATA_YYYY_MM_DD_TRACO);
+
+		DateFormat dataSaida = new SimpleDateFormat(FORMATO_DATA_DD_MM_YYYY);
+
+		try {
+
+			Date dataValida = dataEntrada.parse(data);
+
+			resultado = dataSaida.format(dataValida);
+
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao formatar a data. Informe uma data válida. Data enviada " + data);
+			throw parseException;
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Método para formatar data.
+	 * 
+	 * @param  data             - Data
+	 * @param  formatoDeEntrada - Formato de entrada
+	 * @param  formatoDeSaida   - Formato de saída
+	 * @throws ParseException
+	 */
+	public static String formatarData(final String data, final String formatoDeEntrada, final String formatoDeSaida) throws ParseException {
+
+		String resultado = "";
+		DateFormat dataEntrada = new SimpleDateFormat(formatoDeEntrada);
+
+		DateFormat dataSaida = new SimpleDateFormat(formatoDeSaida);
+
+		try {
+
+			Date dataValida = dataEntrada.parse(data);
+
+			resultado = dataSaida.format(dataValida);
+
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao formatar a data. Informe uma data válida. Data enviada " + data + ", formato de entrada " + formatoDeEntrada + ", formato de saída " + formatoDeSaida);
+			throw parseException;
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Retorna data atual no formato especificado.
+	 * 
+	 * @param  formatoDeSaida - Formato de saída
+	 * @return                data
+	 */
+	public static String dataAtualFormatada(final String formatoDeSaida) {
+
+		String resultado = "";
+		Date dataHoje = new Date();
+		DateFormat dataSaida = new SimpleDateFormat(StringUtil.nuloParaVazio(formatoDeSaida));
+
+		resultado = dataSaida.format(dataHoje);
+
+		return resultado;
+	}
+
+	/**
+	 * Método que retorna o último dia do mês de uma data.
+	 * 
+	 * @param  data - Data
+	 * @return      último dia do mês
+	 */
+	public static int ultimoDiaDoMes(final Date data) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		int resultado = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+		calendar = null;
+
+		return resultado;
+	}
+
+	/**
+	 * Método que retorna o último dia do mês.
+	 * 
+	 * @param  ano - Ano
+	 * @param  mes - Mês
+	 * @return     último dia do mês
+	 */
+	public static int ultimoDiaDoMes(final Integer ano, final Integer mes) {
+
+		int mesReal = mes - 1;
+
+		Calendar calendar = new GregorianCalendar(ano, mesReal, 1);
+
+		int resultado = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+		return resultado;
+	}
+
+	/**
+	 * Método para verificar se é uma data válida.
+	 * 
+	 * @param  data           - Data
+	 * @return                boolean
+	 * @throws ParseException
+	 */
+	public static boolean isDataValida(final String data) throws ParseException {
+
+		try {
+
+			DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
+			df.setLenient(false);
+			Date dt2 = df.parse(data);
+
+			if (dt2.after(stringParaDate(DATA_VALIDA_FINAL)) || dt2.before(stringParaDate(DATA_VALIDA_INICIAL))) {
+				return false;
+			}
+
+			return true;
+
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao verificar se é uma data válida. ParseException. Data enviada " + data);
+		} catch (IllegalArgumentException illegalArgumentException) {
+			LOGGER.log(Level.SEVERE, "Erro ao verificar se é uma data válida. IllegalArgumentException. Data enviada " + data);
+		}
+
+		return false;
+	}
+
+	/**
+	 * Método para verificar se é uma data válida.
+	 * 
+	 * @param  data - Data
+	 * @return      boolean
+	 */
+	public static boolean isDataValida(final Date data) {
+
+		try {
+
+			if (data.after(stringParaDate(DATA_VALIDA_FINAL)) || data.before(stringParaDate(DATA_VALIDA_INICIAL))) {
+				return false;
+			}
+
+			return true;
+		} catch (ParseException parseException) {
+			LOGGER.log(Level.SEVERE, "Erro ao verificar se é uma data válida. ParseException. Data enviada " + data);
+			return false;
+		} catch (IllegalArgumentException iae) {
+			LOGGER.log(Level.SEVERE, "Erro ao verificar se é uma data válida. IllegalArgumentException. Data enviada " + data);
+			return false;
+		}
+	}
+
+	/**
+	 * Verifica se a data é válida.
+	 * 
+	 * @param  data - Data
+	 * @return      true se a data for válida
+	 */
+	public boolean isDataFormatoValido(final String data) {
+
+		boolean resultado = false;
+
+		DateFormat dataEntrada = new SimpleDateFormat(FORMATO_DATA_DD_MM_YYYY);
+
+		try {
+			dataEntrada.parse(data);
+			resultado = true;
+		} catch (ParseException e) {
+			LOGGER.log(Level.SEVERE, "Erro ao verificar se é uma data no formato válido. ParseException. Data enviada " + data);
+			resultado = false;
+		}
+
+		return resultado;
+	}
+
+	/**
+	 * Adicionar uma quantidade de dias a uma data.
+	 * 
+	 * @param  data             - Data
+	 * @param  quantidadeDeDias - Quantidade de dias
+	 * @return                  data
+	 */
+	public static Date adicionarDias(final Date data, final int quantidadeDeDias) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.DATE, quantidadeDeDias);
+
+		return calendar.getTime();
+	}
+
+	/**
+	 * Remover uma quantidade de dias de uma data.
+	 * 
+	 * @param  data             - Data
+	 * @param  quantidadeDeDias - Quantidade de dias
+	 * @return                  data
+	 */
+	public static Date removerDias(final Date data, final int quantidadeDeDias) {
+
+		GregorianCalendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.DATE, (quantidadeDeDias * -1));
+
+		return calendar.getTime();
+	}
+
+	/**
+	 * Adicionar uma quantidade de meses a uma data.
+	 * 
+	 * @param  data              - Data
+	 * @param  quantidadeDeMeses - Quantidade de meses
+	 * @return                   data
+	 */
+	public static Date adicionarMeses(final Date data, final int quantidadeDeMeses) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.MONTH, quantidadeDeMeses);
+
+		return calendar.getTime();
+	}
+
+	/**
+	 * Remover uma quantidade de meses a uma data.
+	 * 
+	 * @param  data              - Data
+	 * @param  quantidadeDeMeses - Quantidade de meses
+	 * @return                   data
+	 */
+	public static Date removerMeses(final Date data, final int quantidadeDeMeses) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.MONTH, quantidadeDeMeses * -1);
+
+		return calendar.getTime();
+	}
+
+	/**
+	 * Adicionar uma quantidade de anos a uma data.
+	 * 
+	 * @param  data             - Data
+	 * @param  quantidadeDeAnos - Quantidade de anos
+	 * @return                  data
+	 */
+	public static Date adicionarAnos(final Date data, final int quantidadeDeAnos) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.YEAR, quantidadeDeAnos);
+
+		return calendar.getTime();
+	}
+
+	/**
+	 * Remover uma quantidade de anos a uma data.
+	 * 
+	 * @param  data             - Data
+	 * @param  quantidadeDeAnos - Quantidade de anos
+	 * @return                  data
+	 */
+	public static Date removerAnos(final Date data, final int quantidadeDeAnos) {
+
+		Calendar calendar = new GregorianCalendar();
+
+		calendar.setTime(data);
+
+		calendar.add(Calendar.YEAR, quantidadeDeAnos * -1);
+
+		return calendar.getTime();
 	}
 
 	/**
